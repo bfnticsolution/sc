@@ -1,0 +1,3549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complexe Scolaire NTIC School — École privée d'excellence à Banfora depuis 2011. Primaire (CEP), Secondaire (BEPC), Lycée (BAC). Inscriptions 2026-2027 ouvertes.">
+    <meta name="keywords" content="école privée Banfora, NTIC School, complexe scolaire Burkina Faso, inscription CEP BEPC BAC">
+    <meta name="author" content="Complexe Scolaire NTIC School">
+    <title>Complexe Scolaire NTIC School — Banfora | Excellence depuis 2011</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230066cc'/%3E%3Cpath d='M25 75V25h12l26 32V25h12v50H63L37 43v32z' fill='white'/%3E%3C/svg%3E">
+
+    <style>
+        /* ============================================
+           NTIC SCHOOL — VERSION 4.0 RÉALISTE
+           Complexe Scolaire — Banfora, Burkina Faso
+           ============================================ */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004d99;
+            --primary-light: #e6f0ff;
+            --secondary: #ff8800;
+            --secondary-dark: #cc6d00;
+            --accent: #009944;         /* Vert du drapeau burkinabè */
+            --red: #ce1126;            /* Rouge du drapeau burkinabè */
+            --dark: #0f1729;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .icon-sm { width: 16px; height: 16px; }
+        .icon-md { width: 32px; height: 32px; }
+        .icon-lg { width: 48px; height: 48px; }
+        .icon-xl { width: 64px; height: 64px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- BOUTONS ----- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.45);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(255, 136, 0, 0.35);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* ============================================
+           TOP BAR — Bandeau institutionnel
+           ============================================ */
+        .top-bar {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.82rem;
+            padding: 8px 0;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-bar-item .icon {
+            width: 14px;
+            height: 14px;
+            color: var(--secondary);
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-bar-right a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .top-bar-right a:hover {
+            color: var(--secondary);
+        }
+
+        .top-bar-right .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO RÉALISTE */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-svg {
+            transform: rotate(-3deg) scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .logo-main {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text .logo-sub {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--secondary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .logo-text .logo-devise {
+            font-size: 0.65rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+            padding: 8px 0;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: var(--white) !important;
+            padding: 10px 22px !important;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 136, 0, 0.3);
+            font-size: 0.88rem !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 136, 0, 0.4);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .burger span {
+            width: 26px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           HERO RÉALISTE
+           ============================================ */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0;
+            background: #0a1a3a;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://dailytrust.com/wp-content/uploads/2022/04/The-Nigerian-Tulip-International-Colleges-NTIC.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg,
+                rgba(10, 26, 58, 0.96) 0%,
+                rgba(0, 77, 153, 0.88) 45%,
+                rgba(0, 102, 204, 0.6) 50%);
+            z-index: 2;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 136, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 136, 0, 0.5);
+            color: #ffb347;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--secondary), #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            margin-bottom: 32px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* Fiche identité hero */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius);
+            padding: 30px;
+            color: var(--white);
+        }
+
+        .hero-card-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-card-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.92rem;
+        }
+
+        .hero-card-row:last-child { border-bottom: none; }
+
+        .hero-card-row .label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-card-row .value {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .hero-card-row .value.accent {
+            color: var(--secondary);
+        }
+
+        /* ============================================
+           BANDEAU CHIFFRES OFFICIELS
+           ============================================ */
+        .official-stats {
+            background: var(--white);
+            padding: 50px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .official-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .official-stat {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .official-stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 30%;
+            height: 40%;
+            width: 1px;
+            background: #e2e8f0;
+        }
+
+        .official-stat .stat-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin: 0 auto 12px;
+        }
+
+        .official-stat .stat-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .official-stat .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 6px;
+        }
+
+        .official-stat .stat-year {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.02rem;
+        }
+
+        /* ============================================
+           MOT DU DIRECTEUR
+           ============================================ */
+        .director-section {
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+        }
+
+        .director-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .director-photo {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/5;
+        }
+
+        .director-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .director-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 77, 153, 0.4), transparent 50%);
+        }
+
+        .director-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            border-radius: 12px;
+            z-index: 2;
+        }
+
+        .director-badge strong {
+            display: block;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .director-badge span {
+            font-size: 0.82rem;
+            color: var(--gray);
+        }
+
+        .director-content h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .director-content h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .director-title {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .director-quote {
+            position: relative;
+            padding-left: 24px;
+            border-left: 3px solid var(--secondary);
+            font-style: italic;
+            color: var(--gray);
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .director-signature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .director-signature-line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .director-signature-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SECTION ÉCOLE
+           ============================================ */
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 520px;
+        }
+
+        .about-image-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 78%;
+            height: 78%;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            z-index: 2;
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-visual:hover .about-image-main img {
+            transform: scale(1.08);
+        }
+
+        .about-image-secondary {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 62%;
+            height: 55%;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            z-index: 3;
+            border: 6px solid var(--white);
+        }
+
+        .about-image-secondary img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            top: 65%;
+            left: 4%;
+            background: var(--white);
+            padding: 16px 22px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .about-badge .badge-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), #008833);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .about-badge .badge-text strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .about-badge .badge-text span {
+            font-size: 0.78rem;
+            color: var(--gray);
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-content h2 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content > p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .about-info-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 12px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            font-size: 0.88rem;
+        }
+
+        .about-info-item .icon {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .about-info-item strong {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .about-info-item span {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .about-values {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .value-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .value-chip .icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ============================================
+           PROGRAMMES — ONGLETS
+           ============================================ */
+        .programs-section {
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: var(--white);
+            border: 2px solid transparent;
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.35);
+        }
+
+        .tab-content { display: none; animation: fadeInUp 0.5s ease; }
+        .tab-content.active { display: block; }
+
+        .program-panel {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .program-visual {
+            position: relative;
+            height: 380px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .program-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .program-panel:hover .program-visual img {
+            transform: scale(1.08);
+        }
+
+        .program-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 102, 204, 0.4), transparent);
+        }
+
+        .program-icon-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 56px;
+            height: 56px;
+            background: var(--white);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .program-classes {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 16px;
+            border-radius: 10px;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+        }
+
+        .program-classes strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .program-classes span {
+            color: var(--gray);
+            font-size: 0.75rem;
+        }
+
+        .program-details h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .program-official {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .program-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .program-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+            list-style: none;
+        }
+
+        .program-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--dark);
+        }
+
+        .program-features li .icon {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .program-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .program-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-price .amount {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .program-price .period {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .program-price .installment {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+           ACTUALITÉS
+           ============================================ */
+        .news-section {
+            background: var(--white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .news-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-category {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .news-date .icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .news-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: var(--gray);
+            font-size: 0.88rem;
+            margin-bottom: 16px;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .news-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .news-link:hover {
+            color: var(--secondary);
+            gap: 10px;
+        }
+
+        .news-link .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ============================================
+           ÉQUIPE PÉDAGOGIQUE
+           ============================================ */
+        .team-section {
+            background: var(--light-gray);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-photo {
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .team-card:hover .team-photo img {
+            transform: scale(1.08);
+        }
+
+        .team-body {
+            padding: 20px 16px;
+        }
+
+        .team-body h4 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .team-body .role {
+            color: var(--secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .team-body .diploma {
+            color: var(--gray);
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           POURQUOI NOUS
+           ============================================ */
+        .why-section {
+            background: var(--dark);
+            color: var(--white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.15), transparent 70%);
+        }
+
+        .why-section .section-header h2 { color: var(--white); }
+        .why-section .section-header p { color: rgba(255, 255, 255, 0.7); }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 32px 24px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: left 0.5s ease;
+        }
+
+        .why-card:hover::before { left: 0; }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 136, 0, 0.3);
+        }
+
+        .why-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover .why-icon {
+            transform: rotate(-8deg) scale(1.1);
+        }
+
+        .why-icon .icon { width: 26px; height: 26px; }
+
+        .why-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================
+           GALERIE
+           ============================================ */
+        .gallery-section {
+            background: var(--white);
+        }
+
+        .gallery-mosaic {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 14px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           TÉMOIGNAGES
+           ============================================ */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-quote {
+            color: var(--primary-light);
+            margin-bottom: 14px;
+        }
+
+        .testimonial-quote .icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .testimonial-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h5 {
+            font-size: 0.92rem;
+            color: var(--dark);
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info p {
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 2px;
+            margin-top: 4px;
+        }
+
+        .testimonial-rating .icon {
+            width: 12px;
+            height: 12px;
+            color: var(--secondary);
+            fill: var(--secondary);
+        }
+
+        /* ============================================
+           PARTENAIRES
+           ============================================ */
+        .partners-section {
+            background: var(--light-gray);
+            padding: 50px 0;
+        }
+
+        .partners-title {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+
+        .partner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .partner-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .partner-logo {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .partner-logo .icon { width: 24px; height: 24px; }
+
+        .partner-item span {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           INSCRIPTIONS
+           ============================================ */
+        .enrollment-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enrollment-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 136, 0, 0.15), transparent 70%);
+        }
+
+        .enrollment-section .section-header h2 { color: var(--white); }
+        .enrollment-section .section-header p { color: rgba(255, 255, 255, 0.8); }
+
+        .enrollment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 50px;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .enrollment-info h3 {
+            color: var(--secondary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+
+        .enrollment-info ul {
+            list-style: none;
+            margin-bottom: 26px;
+        }
+
+        .enrollment-info ul li {
+            padding: 9px 0;
+            padding-left: 28px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.88rem;
+        }
+
+        .enrollment-info ul li .icon {
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 16px;
+            height: 16px;
+            color: var(--secondary);
+        }
+
+        .enrollment-form {
+            background: var(--white);
+            padding: 36px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            color: var(--dark);
+        }
+
+        .enrollment-form h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .form-group { margin-bottom: 16px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.88rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact-section {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .contact-card {
+            background: var(--light-gray);
+            padding: 26px 18px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .contact-card:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-card .contact-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin: 0 auto 14px;
+        }
+
+        .contact-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 0.82rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .contact-map {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 320px;
+            position: relative;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-content {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .map-content .icon {
+            width: 56px;
+            height: 56px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .map-content h4 {
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .map-content p {
+            color: var(--gray);
+            font-size: 0.88rem;
+        }
+
+        .map-pin-animated {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .map-pin-animated .pin-dot {
+            width: 18px;
+            height: 18px;
+            background: var(--secondary);
+            border-radius: 50%;
+            position: relative;
+            animation: pulsePin 2s infinite;
+        }
+
+        @keyframes pulsePin {
+            0% { box-shadow: 0 0 0 0 rgba(255, 136, 0, 0.7); }
+            70% { box-shadow: 0 0 0 28px rgba(255, 136, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 136, 0, 0); }
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 56px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+            gap: 36px;
+            margin-bottom: 36px;
+        }
+
+        .footer-brand .logo { margin-bottom: 16px; }
+
+        .footer-brand > p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .footer-legal {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+        }
+
+        .footer-legal strong {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-social .icon { width: 18px; height: 18px; }
+
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 18px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .footer ul { list-style: none; }
+
+        .footer ul li { margin-bottom: 10px; }
+
+        .footer ul a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .footer ul a:hover {
+            color: var(--secondary);
+            padding-left: 6px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .footer-contact-item .icon {
+            width: 16px;
+            height: 16px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom a { color: var(--secondary); }
+
+        /* ============================================
+           BOUTONS FLOTTANTS
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 58px;
+            height: 58px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float .icon { width: 28px; height: 28px; }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 26px;
+            left: 26px;
+            width: 46px;
+            height: 46px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .back-to-top .icon {
+            transform: rotate(180deg);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-card {
+                max-width: 500px;
+            }
+
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .partners-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid,
+            .program-panel,
+            .director-grid,
+            .enrollment-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-visual { height: 420px; }
+
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+            .news-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+
+            .gallery-mosaic {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 180px);
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+
+            .program-panel { padding: 36px 28px; }
+            .official-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .official-stat:nth-child(2)::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { font-size: 0.75rem; }
+            .top-bar-left { gap: 12px; }
+            .top-bar-item:nth-child(3) { display: none; }
+
+            .nav-links {
+                position: fixed;
+                top: 72px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 72px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 40px 24px;
+                gap: 24px;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                align-items: flex-start;
+            }
+
+            .nav-links.active { left: 0; }
+            .burger { display: flex; }
+
+            .burger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .burger.active span:nth-child(2) { opacity: 0; }
+            .burger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .section { padding: 60px 0; }
+
+            .why-grid,
+            .contact-grid,
+            .news-grid,
+            .team-grid,
+            .partners-grid,
+            .program-features,
+            .about-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-mosaic {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 200px);
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; }
+
+            .form-row { grid-template-columns: 1fr; }
+
+            .about-visual { height: 380px; }
+
+            .official-stats-grid { grid-template-columns: 1fr; }
+            .official-stat::after { display: none; }
+
+            .program-panel { padding: 28px 20px; }
+            .program-visual { height: 260px; }
+            .enrollment-form { padding: 26px 20px; }
+
+            .director-photo { max-width: 320px; margin: 0 auto; }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons .btn { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-card { padding: 22px 18px; }
+            .hero-card-row { font-size: 0.82rem; }
+        }
+
+        @media print {
+            .header, .whatsapp-float, .back-to-top,
+            .scroll-progress, .hero-bg, .top-bar {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============================================
+         BIBLIOTHÈQUE SVG
+         ============================================ -->
+    <svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+        <defs>
+            <symbol id="icon-graduation" viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </symbol>
+            <symbol id="icon-trophy" viewBox="0 0 24 24">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+            </symbol>
+            <symbol id="icon-book-open" viewBox="0 0 24 24">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </symbol>
+            <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+            </symbol>
+            <symbol id="icon-users" viewBox="0 0 24 24">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </symbol>
+            <symbol id="icon-backpack" viewBox="0 0 24 24">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M8 10h8M8 18h8"/>
+                <path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+            </symbol>
+            <symbol id="icon-book" viewBox="0 0 24 24">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </symbol>
+            <symbol id="icon-user-check" viewBox="0 0 24 24">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <polyline points="16 11 18 13 22 9"/>
+            </symbol>
+            <symbol id="icon-building" viewBox="0 0 24 24">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <path d="M9 22v-4h6v4"/>
+                <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+            </symbol>
+            <symbol id="icon-chart" viewBox="0 0 24 24">
+                <line x1="12" y1="20" x2="12" y2="10"/>
+                <line x1="18" y1="20" x2="18" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="16"/>
+            </symbol>
+            <symbol id="icon-globe" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </symbol>
+            <symbol id="icon-activity" viewBox="0 0 24 24">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </symbol>
+            <symbol id="icon-shield" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </symbol>
+            <symbol id="icon-clipboard" viewBox="0 0 24 24">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                <path d="M9 12h6M9 16h6"/>
+            </symbol>
+            <symbol id="icon-calendar" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+            </symbol>
+            <symbol id="icon-credit-card" viewBox="0 0 24 24">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+            </symbol>
+            <symbol id="icon-map-pin" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </symbol>
+            <symbol id="icon-phone" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </symbol>
+            <symbol id="icon-message" viewBox="0 0 24 24">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </symbol>
+            <symbol id="icon-mail" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </symbol>
+            <symbol id="icon-clock" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </symbol>
+            <symbol id="icon-map" viewBox="0 0 24 24">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+                <line x1="8" y1="2" x2="8" y2="18"/>
+                <line x1="16" y1="6" x2="16" y2="22"/>
+            </symbol>
+            <symbol id="icon-facebook" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </symbol>
+            <symbol id="icon-youtube" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </symbol>
+            <symbol id="icon-music" viewBox="0 0 24 24">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+            </symbol>
+            <symbol id="icon-chevron-down" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"/>
+            </symbol>
+            <symbol id="icon-chevron-right" viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"/>
+            </symbol>
+            <symbol id="icon-check" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"/>
+            </symbol>
+            <symbol id="icon-quote" viewBox="0 0 24 24">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+            </symbol>
+            <symbol id="icon-star" viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </symbol>
+            <symbol id="icon-award" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </symbol>
+            <symbol id="icon-target" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+            </symbol>
+            <symbol id="icon-heart" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- ============================================
+         TOP BAR INSTITUTIONNEL
+         ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <svg class="icon"><use href="#icon-map-pin"/></svg>
+                        Secteur 15, Quartier Tatana — Banfora
+                    </div>
+                    <div class="top-bar-item">
+                        <svg class="icon"><use href="#icon-phone"/></svg>
+                        +226 05 58 58 68
+                    </div>
+                    <div class="top-bar-item">
+                        <svg class="icon"><use href="#icon-clock"/></svg>
+                        Lun-Ven : 7h-17h | Sam : 8h-12h
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#" aria-label="Facebook"><svg class="icon"><use href="#icon-facebook"/></svg></a>
+                    <a href="https://wa.me/22669696924" aria-label="WhatsApp"><svg class="icon"><use href="#icon-message"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg class="icon"><use href="#icon-youtube"/></svg></a>
+                    <span>|</span>
+                    <a href="#inscriptions" style="color: var(--secondary); font-weight: 600;">Inscriptions ouvertes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#accueil" class="logo">
+                    <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0066cc"/>
+                                <stop offset="100%" stop-color="#003d80"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="2" width="96" height="96" rx="22" fill="url(#logoGrad)"/>
+                        <path d="M 20 40 Q 50 32 80 40 L 80 74 Q 50 66 20 74 Z" fill="white" opacity="0.12"/>
+                        <path d="M 20 40 Q 50 32 80 40 L 80 74 Q 50 66 20 74 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                        <line x1="50" y1="36" x2="50" y2="70" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M 30 64 L 30 44 L 38 44 L 55 58 L 55 44 L 63 44 L 63 64 L 55 64 L 38 50 L 38 64 Z" fill="#ff8800"/>
+                        <path d="M 76 22 L 78 28 L 84 28 L 79 32 L 81 38 L 76 34 L 71 38 L 73 32 L 68 28 L 74 28 Z" fill="#ffb347"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-main">Complexe Scolaire NTIC School</span>
+                        <span class="logo-sub">Banfora · Burkina Faso</span>
+                        <span class="logo-devise">« Discipline · Travail · Réussite »</span>
+                    </div>
+                </a>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#ecole">Notre École</a></li>
+                    <li><a href="#programmes">Programmes</a></li>
+                    <li><a href="#actualites">Actualités</a></li>
+                    <li><a href="#equipe">Équipe</a></li>
+                    <li><a href="#inscriptions">Inscriptions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#inscriptions" class="nav-cta">S'inscrire</a></li>
+                </ul>
+
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO RÉALISTE
+         ============================================ -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Inscriptions 2026-2027 ouvertes
+                    </div>
+
+                    <h1>
+                        Former les<br>
+                        <span class="highlight">leaders de demain</span><br>
+                        à Banfora
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Depuis 2011, le Complexe Scolaire NTIC School accompagne les élèves du primaire au BAC dans un cadre discipliné, moderne et bienveillant. Autorisé par le Ministère de l'Éducation Nationale.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#inscriptions" class="btn btn-secondary">
+                            <svg class="icon icon-sm"><use href="#icon-clipboard"/></svg>
+                            S'inscrire maintenant
+                        </a>
+                        <a href="#programmes" class="btn btn-outline">
+                            <svg class="icon icon-sm"><use href="#icon-book-open"/></svg>
+                            Voir les programmes
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-title">Fiche établissement</div>
+                    <div class="hero-card-row">
+                        <span class="label">Nom officiel</span>
+                        <span class="value">CS NTIC School</span>
+                    </div>
+                    <div class="hero-card-row">
+                        <span class="label">Code établissement</span>
+                        <span class="value">BF-BNF-2011-045</span>
+                    </div>
+                    <div class="hero-card-row">
+                        <span class="label">Année de fondation</span>
+                        <span class="value">2011</span>
+                    </div>
+                    <div class="hero-card-row">
+                        <span class="label">Niveaux</span>
+                        <span class="value">Primaire · Secondaire · Lycée</span>
+                    </div>
+                    <div class="hero-card-row">
+                        <span class="label">Capacité</span>
+                        <span class="value">500 élèves</span>
+                    </div>
+                    <div class="hero-card-row">
+                        <span class="label">Autorisation</span>
+                        <span class="value accent">MENAPLN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CHIFFRES OFFICIELS
+         ============================================ -->
+    <section class="official-stats">
+        <div class="container">
+            <div class="official-stats-grid">
+                <div class="official-stat reveal">
+                    <div class="stat-icon">
+                        <svg class="icon"><use href="#icon-award"/></svg>
+                    </div>
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% de réussite CEP 2026</div>
+                    <div class="stat-year">Session de juin 2026</div>
+                </div>
+
+                <div class="official-stat reveal reveal-delay-1">
+                    <div class="stat-icon">
+                        <svg class="icon"><use href="#icon-trophy"/></svg>
+                    </div>
+                    <div class="stat-number" data-count="96">0</div>
+                    <div class="stat-label">% de réussite BEPC 2026</div>
+                    <div class="stat-year">Session de juin 2026</div>
+                </div>
+
+                <div class="official-stat reveal reveal-delay-2">
+                    <div class="stat-icon">
+                        <svg class="icon"><use href="#icon-graduation"/></svg>
+                    </div>
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">% de réussite BAC 2026</div>
+                    <div class="stat-year">Session de juillet 2026</div>
+                </div>
+
+                <div class="official-stat reveal reveal-delay-3">
+                    <div class="stat-icon">
+                        <svg class="icon"><use href="#icon-users"/></svg>
+                    </div>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Années d'expérience</div>
+                    <div class="stat-year">Depuis 2011</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MOT DU DIRECTEUR
+         ============================================ -->
+    <section class="section director-section">
+        <div class="container">
+            <div class="director-grid">
+                <div class="director-photo reveal">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Directeur NTIC School">
+                    <div class="director-badge">
+                        <strong>M. Kévin Kiessé Sanou</strong>
+                        <span>Directeur Général & Fondateur</span>
+                    </div>
+                </div>
+
+                <div class="director-content reveal reveal-delay-1">
+                    <span class="section-tag">Mot du Directeur</span>
+                    <h2>Un engagement pour <span>la réussite</span></h2>
+                    <span class="director-title">M. Kévin Kiessé Sanou — Fondateur</span>
+
+                    <div class="director-quote">
+                        « Chers parents, chers élèves,<br><br>
+                        Depuis 2011, notre établissement s'engage à offrir une éducation de qualité, accessible et exigeante. Nous croyons que chaque enfant porte en lui un potentiel unique qui mérite d'être révélé.<br><br>
+                        À NTIC School, nous ne formons pas seulement des élèves, nous préparons les citoyens de demain. Notre équipe pédagogique est entièrement dévouée à cette mission.<br><br>
+                        Bienvenue dans notre famille scolaire. »
+                    </div>
+
+                    <div class="director-signature">
+                        <div class="director-signature-line"></div>
+                        <span class="director-signature-text">K. K. Sanou</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NOTRE ÉCOLE
+         ============================================ -->
+    <section class="section about-section" id="ecole">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual reveal">
+                    <div class="about-image-main">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Salle de classe">
+                    </div>
+                    <div class="about-image-secondary">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Élèves">
+                    </div>
+                    <div class="about-badge">
+                        <div class="badge-icon">
+                            <svg class="icon"><use href="#icon-shield"/></svg>
+                        </div>
+                        <div class="badge-text">
+                            <strong>MENAPLN</strong>
+                            <span>Établissement reconnu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content reveal reveal-delay-1">
+                    <span class="section-tag">Notre École</span>
+                    <h2>Un <span>complexe scolaire</span> complet à Banfora</h2>
+                    <p>
+                        Situé au cœur du Secteur 15, quartier Tatana, le Complexe Scolaire NTIC School accueille les élèves de la maternelle au lycée. Notre infrastructure moderne et notre équipe pédagogique expérimentée en font un choix de référence pour les familles de la région des Cascades.
+                    </p>
+
+                    <div class="about-info-grid">
+                        <div class="about-info-item">
+                            <svg class="icon"><use href="#icon-map-pin"/></svg>
+                            <div>
+                                <strong>Situation</strong>
+                                <span>Secteur 15, Tatana — Banfora</span>
+                            </div>
+                        </div>
+                        <div class="about-info-item">
+                            <svg class="icon"><use href="#icon-calendar"/></svg>
+                            <div>
+                                <strong>Ouverture</strong>
+                                <span>Fondé en 2011</span>
+                            </div>
+                        </div>
+                        <div class="about-info-item">
+                            <svg class="icon"><use href="#icon-users"/></svg>
+                            <div>
+                                <strong>Capacité</strong>
+                                <span>500 élèves — 18 classes</span>
+                            </div>
+                        </div>
+                        <div class="about-info-item">
+                            <svg class="icon"><use href="#icon-user-check"/></svg>
+                            <div>
+                                <strong>Personnel</strong>
+                                <span>45 enseignants qualifiés</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-values">
+                        <span class="value-chip">
+                            <svg class="icon"><use href="#icon-trophy"/></svg>
+                            Excellence
+                        </span>
+                        <span class="value-chip">
+                            <svg class="icon"><use href="#icon-book-open"/></svg>
+                            Discipline
+                        </span>
+                        <span class="value-chip">
+                            <svg class="icon"><use href="#icon-lightbulb"/></svg>
+                            Innovation
+                        </span>
+                        <span class="value-chip">
+                            <svg class="icon"><use href="#icon-heart"/></svg>
+                            Bienveillance
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROGRAMMES
+         ============================================ -->
+    <section class="section programs-section" id="programmes">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Nos Programmes</span>
+                <h2>Un parcours <span>complet</span> pour chaque élève</h2>
+                <p>Du primaire au BAC, un enseignement conforme au programme officiel du Burkina Faso</p>
+            </div>
+
+            <div class="tabs-nav reveal">
+                <button class="tab-btn active" data-tab="primaire">
+                    <svg class="icon icon-sm"><use href="#icon-backpack"/></svg>
+                    Primaire (CEP)
+                </button>
+                <button class="tab-btn" data-tab="secondaire">
+                    <svg class="icon icon-sm"><use href="#icon-book"/></svg>
+                    Secondaire (BEPC)
+                </button>
+                <button class="tab-btn" data-tab="bac">
+                    <svg class="icon icon-sm"><use href="#icon-graduation"/></svg>
+                    Lycée (BAC)
+                </button>
+            </div>
+
+            <!-- Primaire -->
+            <div class="tab-content active" id="tab-primaire">
+                <div class="program-panel">
+                    <div class="program-visual">
+                        <div class="program-icon-badge">
+                            <svg class="icon icon-md"><use href="#icon-backpack"/></svg>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Primaire">
+                        <div class="program-classes">
+                            <div>
+                                <strong>6 niveaux</strong>
+                                <span>CP1 à CM2</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <strong>Examen</strong>
+                                <span>CEP en CM2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Enseignement Primaire</h3>
+                        <span class="program-official">Conforme au programme MENAPLN</span>
+                        <p class="program-desc">Du CP1 au CM2, nous posons les fondations solides de la réussite scolaire de votre enfant, avec une préparation progressive au CEP.</p>
+                        <ul class="program-features">
+                            <li><svg class="icon"><use href="#icon-check"/></svg> CP1 à CM2</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Programme officiel</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Initiation informatique</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Anglais dès le CP1</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Activités sportives</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Suivi individualisé</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Préparation CEP</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Cantine disponible</li>
+                        </ul>
+                        <div class="program-footer">
+                            <div class="program-price">
+                                <span class="amount">150 000 FCFA</span>
+                                <span class="period">par an</span>
+                                <span class="installment">Paiement en 3 tranches</span>
+                            </div>
+                            <a href="#inscriptions" class="btn btn-primary">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondaire -->
+            <div class="tab-content" id="tab-secondaire">
+                <div class="program-panel">
+                    <div class="program-visual">
+                        <div class="program-icon-badge">
+                            <svg class="icon icon-md"><use href="#icon-book"/></svg>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80" alt="Secondaire">
+                        <div class="program-classes">
+                            <div>
+                                <strong>4 niveaux</strong>
+                                <span>6ème à la 3ème</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <strong>Examen</strong>
+                                <span>BEPC en 3ème</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Enseignement Secondaire</h3>
+                        <span class="program-official">Conforme au programme MENAPLN</span>
+                        <p class="program-desc">De la 6ème à la 3ème, préparation au BEPC dans un environnement moderne et exigeant, avec un encadrement renforcé.</p>
+                        <ul class="program-features">
+                            <li><svg class="icon"><use href="#icon-check"/></svg> 6ème à la 3ème</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Préparation BEPC</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Laboratoires sciences</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Informatique & robotique</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Clubs & activités</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Sorties pédagogiques</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Examens blancs</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Soutien scolaire</li>
+                        </ul>
+                        <div class="program-footer">
+                            <div class="program-price">
+                                <span class="amount">250 000 FCFA</span>
+                                <span class="period">par an</span>
+                                <span class="installment">Paiement en 3 tranches</span>
+                            </div>
+                            <a href="#inscriptions" class="btn btn-primary">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BAC -->
+            <div class="tab-content" id="tab-bac">
+                <div class="program-panel">
+                    <div class="program-visual">
+                        <div class="program-icon-badge">
+                            <svg class="icon icon-md"><use href="#icon-graduation"/></svg>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="BAC">
+                        <div class="program-classes">
+                            <div>
+                                <strong>3 niveaux</strong>
+                                <span>2nde à Terminale</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <strong>Filières</strong>
+                                <span>A · C · D</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Enseignement Lycée</h3>
+                        <span class="program-official">Préparation intensive BAC</span>
+                        <p class="program-desc">De la Seconde à la Terminale, une préparation intensive pour décrocher le BAC avec mention. Filières A, C et D disponibles.</p>
+                        <ul class="program-features">
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Seconde à Terminale</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Filières A, C, D</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Préparation intensive</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Examens blancs mensuels</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Orientation post-BAC</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> 98% de réussite 2026</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Professeurs agrégés</li>
+                            <li><svg class="icon"><use href="#icon-check"/></svg> Stages intensifs</li>
+                        </ul>
+                        <div class="program-footer">
+                            <div class="program-price">
+                                <span class="amount">350 000 FCFA</span>
+                                <span class="period">par an</span>
+                                <span class="installment">Paiement en 3 tranches</span>
+                            </div>
+                            <a href="#inscriptions" class="btn btn-primary">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ACTUALITÉS
+         ============================================ -->
+    <section class="section news-section" id="actualites">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Actualités</span>
+                <h2>La vie de <span>l'école</span></h2>
+                <p>Suivez les événements et annonces officielles de NTIC School</p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card reveal">
+                    <div class="news-image">
+                        <span class="news-category">Résultats</span>
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Résultats BAC">
+                    </div>
+                    <div class="news-body">
+                        <div class="news-date">
+                            <svg class="icon"><use href="#icon-calendar"/></svg>
+                            15 juillet 2026
+                        </div>
+                        <h3 class="news-title">Excellents résultats au BAC 2026 : 98% de réussite</h3>
+                        <p class="news-excerpt">Nos élèves de Terminale ont brillé à l'examen du BAC avec un taux de réussite de 98%, dont 12 mentions. Félicitations à tous !</p>
+                        <a href="#" class="news-link">
+                            Lire la suite
+                            <svg class="icon"><use href="#icon-chevron-right"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card reveal reveal-delay-1">
+                    <div class="news-image">
+                        <span class="news-category">Rentrée</span>
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Rentrée scolaire">
+                    </div>
+                    <div class="news-body">
+                        <div class="news-date">
+                            <svg class="icon"><use href="#icon-calendar"/></svg>
+                            1 septembre 2026
+                        </div>
+                        <h3 class="news-title">Inscriptions ouvertes pour l'année 2026-2027</h3>
+                        <p class="news-excerpt">Les inscriptions sont ouvertes jusqu'au 30 septembre 2026. Places limitées. Paiement en 3 tranches possible.</p>
+                        <a href="#inscriptions" class="news-link">
+                            S'inscrire
+                            <svg class="icon"><use href="#icon-chevron-right"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="news-card reveal reveal-delay-2">
+                    <div class="news-image">
+                        <span class="news-category">Événement</span>
+                        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80" alt="Cérémonie">
+                    </div>
+                    <div class="news-body">
+                        <div class="news-date">
+                            <svg class="icon"><use href="#icon-calendar"/></svg>
+                            28 juin 2026
+                        </div>
+                        <h3 class="news-title">Cérémonie de remise des diplômes du CEP et BEPC</h3>
+                        <p class="news-excerpt">Une cérémonie émouvante a réuni élèves, parents et enseignants pour célébrer la réussite de nos élèves aux examens nationaux.</p>
+                        <a href="#" class="news-link">
+                            Lire la suite
+                            <svg class="icon"><use href="#icon-chevron-right"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ÉQUIPE PÉDAGOGIQUE
+         ============================================ -->
+    <section class="section team-section" id="equipe">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Notre Équipe</span>
+                <h2>Une équipe <span>dévouée</span> à votre enfant</h2>
+                <p>Des enseignants qualifiés et expérimentés pour encadrer les élèves</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Directeur">
+                    </div>
+                    <div class="team-body">
+                        <h4>M. Kévin Kiessé Sanou</h4>
+                        <span class="role">Directeur Général</span>
+                        <p class="diploma">Master en Management de l'Éducation<br>Fondateur — 15 ans d'expérience</p>
+                    </div>
+                </div>
+
+                <div class="team-card reveal reveal-delay-1">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Directrice pédagogique">
+                    </div>
+                    <div class="team-body">
+                        <h4>Mme Aminata Traoré</h4>
+                        <span class="role">Directrice Pédagogique</span>
+                        <p class="diploma">Licence en Sciences de l'Éducation<br>12 ans d'expérience</p>
+                    </div>
+                </div>
+
+                <div class="team-card reveal reveal-delay-2">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&q=80" alt="Surveillant général">
+                    </div>
+                    <div class="team-body">
+                        <h4>M. Bakary Ouédraogo</h4>
+                        <span class="role">Surveillant Général</span>
+                        <p class="diploma">Licence en Lettres Modernes<br>10 ans d'expérience</p>
+                    </div>
+                </div>
+
+                <div class="team-card reveal reveal-delay-3">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Responsable informatique">
+                    </div>
+                    <div class="team-body">
+                        <h4>Mme Fatoumata Kaboré</h4>
+                        <span class="role">Responsable Informatique</span>
+                        <p class="diploma">Master en Informatique<br>8 ans d'expérience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POURQUOI NOUS
+         ============================================ -->
+    <section class="section why-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Pourquoi nous</span>
+                <h2>Six raisons de nous <span>faire confiance</span></h2>
+                <p>Ce qui fait la différence au quotidien pour votre enfant</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-user-check"/></svg>
+                    </div>
+                    <h4>Enseignants qualifiés</h4>
+                    <p>45 enseignants diplômés et formés en continu, dont 8 professeurs agrégés.</p>
+                </div>
+
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-building"/></svg>
+                    </div>
+                    <h4>Infrastructures modernes</h4>
+                    <p>18 salles climatisées, 3 laboratoires, bibliothèque, salle informatique et terrain de sport.</p>
+                </div>
+
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-chart"/></svg>
+                    </div>
+                    <h4>Suivi personnalisé</h4>
+                    <p>Bilans trimestriels avec les parents, soutien scolaire et suivi individuel des élèves.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-globe"/></svg>
+                    </div>
+                    <h4>Ouverture au monde</h4>
+                    <p>Anglais renforcé, échanges avec des écoles partenaires et projets internationaux.</p>
+                </div>
+
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-activity"/></svg>
+                    </div>
+                    <h4>Activités extrascolaires</h4>
+                    <p>Clubs de sport, musique, théâtre, journal de l'école et club scientifique toute l'année.</p>
+                </div>
+
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon">
+                        <svg class="icon"><use href="#icon-shield"/></svg>
+                    </div>
+                    <h4>Cadre sécurisé</h4>
+                    <p>Surveillance 24h/24, infirmerie, cantine équilibrée et transport scolaire disponible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALERIE
+         ============================================ -->
+    <section class="section gallery-section" id="galerie">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Galerie</span>
+                <h2>La vie à <span>NTIC School</span></h2>
+                <p>Découvrez notre environnement en images</p>
+            </div>
+
+            <div class="gallery-mosaic reveal">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Salle de classe">
+                    <div class="gallery-caption">Salle de classe climatisée</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80" alt="Bibliothèque">
+                    <div class="gallery-caption">Bibliothèque</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80" alt="Élèves">
+                    <div class="gallery-caption">Élèves en cours</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80" alt="Laboratoire">
+                    <div class="gallery-caption">Laboratoire de sciences</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="Cour">
+                    <div class="gallery-caption">Cour de récréation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TÉMOIGNAGES
+         ============================================ -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Témoignages</span>
+                <h2>Ils nous font <span>confiance</span></h2>
+                <p>Ce que disent les parents de nos élèves</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">
+                        <svg class="icon"><use href="#icon-quote"/></svg>
+                    </div>
+                    <p class="testimonial-text">Mon fils Ibrahim a obtenu son BAC série D avec mention grâce à NTIC School. Les enseignants sont dévoués et le suivi est excellent. Je recommande cette école à tous les parents de Banfora.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AT</div>
+                        <div class="testimonial-info">
+                            <h5>Aminata Traoré</h5>
+                            <p>Maman d'élève — Secteur 15, Banfora</p>
+                            <div class="testimonial-rating">
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-quote">
+                        <svg class="icon"><use href="#icon-quote"/></svg>
+                    </div>
+                    <p class="testimonial-text">Ma fille Aïcha a progressé de façon spectaculaire depuis qu'elle est inscrite ici. Le cadre est sérieux et les résultats sont au rendez-vous. Les frais sont raisonnables et le paiement échelonné est un vrai plus.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">BS</div>
+                        <div class="testimonial-info">
+                            <h5>Bakary Sanou</h5>
+                            <p>Papa d'élève — Quartier Tatana, Banfora</p>
+                            <div class="testimonial-rating">
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-quote">
+                        <svg class="icon"><use href="#icon-quote"/></svg>
+                    </div>
+                    <p class="testimonial-text">Enfin une école à Banfora qui allie discipline et modernité. Mes deux enfants y sont inscrits depuis 3 ans et nous sommes très satisfaits. L'équipe est à l'écoute et les infrastructures sont propres.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">FO</div>
+                        <div class="testimonial-info">
+                            <h5>Fatoumata Ouédraogo</h5>
+                            <p>Maman de deux élèves — Secteur 15, Banfora</p>
+                            <div class="testimonial-rating">
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                                <svg class="icon"><use href="#icon-star"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PARTENAIRES
+         ============================================ -->
+    <section class="partners-section">
+        <div class="container">
+            <p class="partners-title reveal">Ils nous accompagnent</p>
+            <div class="partners-grid">
+                <div class="partner-item reveal">
+                    <div class="partner-logo">
+                        <svg class="icon"><use href="#icon-shield"/></svg>
+                    </div>
+                    <span>MENAPLN</span>
+                </div>
+                <div class="partner-item reveal reveal-delay-1">
+                    <div class="partner-logo">
+                        <svg class="icon"><use href="#icon-graduation"/></svg>
+                    </div>
+                    <span>Université de Ouaga</span>
+                </div>
+                <div class="partner-item reveal reveal-delay-2">
+                    <div class="partner-logo">
+                        <svg class="icon"><use href="#icon-building"/></svg>
+                    </div>
+                    <span>Mairie de Banfora</span>
+                </div>
+                <div class="partner-item reveal reveal-delay-3">
+                    <div class="partner-logo">
+                        <svg class="icon"><use href="#icon-globe"/></svg>
+                    </div>
+                    <span>UNICEF Burkina</span>
+                </div>
+                <div class="partner-item reveal reveal-delay-3">
+                    <div class="partner-logo">
+                        <svg class="icon"><use href="#icon-award"/></svg>
+                    </div>
+                    <span>NTIC Solution</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INSCRIPTIONS
+         ============================================ -->
+    <section class="section enrollment-section" id="inscriptions">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag" style="color: var(--secondary);">Inscriptions</span>
+                <h2>Inscriptions <span style="color: var(--secondary);">2026-2027</span></h2>
+                <p>Ouvertes jusqu'au 30 septembre 2026 — Places limitées</p>
+            </div>
+
+            <div class="enrollment-grid">
+                <div class="enrollment-info reveal">
+                    <h3>
+                        <svg class="icon"><use href="#icon-clipboard"/></svg>
+                        Documents à fournir
+                    </h3>
+                    <ul>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Acte de naissance de l'élève</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Bulletins des deux dernières années</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Certificat de scolarité précédent</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> 2 photos d'identité récentes</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Pièce d'identité du parent</li>
+                    </ul>
+
+                    <h3>
+                        <svg class="icon"><use href="#icon-calendar"/></svg>
+                        Dates clés
+                    </h3>
+                    <ul>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Ouverture : 1er août 2026</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Clôture : 30 septembre 2026</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Rentrée : 1er octobre 2026</li>
+                    </ul>
+
+                    <h3>
+                        <svg class="icon"><use href="#icon-credit-card"/></svg>
+                        Paiement
+                    </h3>
+                    <ul>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Paiement en 3 tranches</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> -10% pour paiement comptant</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> -15% dès le 2ème enfant</li>
+                        <li><svg class="icon"><use href="#icon-check"/></svg> Espèces, YengaPay, Chariow</li>
+                    </ul>
+                </div>
+
+                <div class="enrollment-form reveal reveal-delay-1">
+                    <h3>Formulaire de pré-inscription</h3>
+                    <form id="enrollmentForm">
+                        <div class="form-group">
+                            <label for="parentName">Nom du parent / tuteur *</label>
+                            <input type="text" id="parentName" required placeholder="Ex: Sanou Kévin">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" required placeholder="+226 70 00 00 00">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="email@exemple.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentName">Nom de l'élève *</label>
+                            <input type="text" id="studentName" required placeholder="Ex: Sanou Aminata">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="level">Niveau *</label>
+                                <select id="level" required>
+                                    <option value="">-- Choisir --</option>
+                                    <optgroup label="Primaire">
+                                        <option>CP1</option><option>CP2</option>
+                                        <option>CE1</option><option>CE2</option>
+                                        <option>CM1</option><option>CM2</option>
+                                    </optgroup>
+                                    <optgroup label="Secondaire">
+                                        <option>6ème</option><option>5ème</option>
+                                        <option>4ème</option><option>3ème</option>
+                                    </optgroup>
+                                    <optgroup label="Lycée">
+                                        <option>Seconde</option><option>Première</option>
+                                        <option>Terminale</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Sexe *</label>
+                                <select id="gender" required>
+                                    <option value="">-- Choisir --</option>
+                                    <option value="M">Masculin</option>
+                                    <option value="F">Féminin</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <svg class="icon icon-sm"><use href="#icon-mail"/></svg>
+                            Envoyer la pré-inscription
+                        </button>
+                        <p style="text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--gray);">
+                            Réponse garantie sous 24h
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT
+         ============================================ -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Contact</span>
+                <h2>Nous <span>contacter</span></h2>
+                <p>Notre équipe est à votre écoute</p>
+            </div>
+
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon"><use href="#icon-map-pin"/></svg>
+                    </div>
+                    <h4>Adresse</h4>
+                    <p>Secteur 15, Quartier Tatana<br>Banfora, Burkina Faso</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon"><use href="#icon-phone"/></svg>
+                    </div>
+                    <h4>Téléphone</h4>
+                    <p><a href="tel:+22605585868">+226 05 58 58 68</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon"><use href="#icon-message"/></svg>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p><a href="https://wa.me/22669696924" target="_blank">+226 69 69 69 24</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg class="icon"><use href="#icon-mail"/></svg>
+                    </div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:contact@nticschool.bf">contact@nticschool.bf</a></p>
+                </div>
+            </div>
+
+            <div class="contact-map reveal">
+                <div class="map-pin-animated">
+                    <div class="pin-dot"></div>
+                </div>
+                <div class="map-content">
+                    <svg class="icon"><use href="#icon-map"/></svg>
+                    <h4>Localisation Google Maps</h4>
+                    <p>Secteur 15, Quartier Tatana — Banfora<br>Intégration disponible dans la version finale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#accueil" class="logo">
+                        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="96" height="96" rx="22" fill="#0066cc"/>
+                            <path d="M 20 40 Q 50 32 80 40 L 80 74 Q 50 66 20 74 Z" fill="none" stroke="white" stroke-width="2.5"/>
+                            <line x1="50" y1="36" x2="50" y2="70" stroke="white" stroke-width="2.5"/>
+                            <path d="M 30 64 L 30 44 L 38 44 L 55 58 L 55 44 L 63 44 L 63 64 L 55 64 L 38 50 L 38 64 Z" fill="#ff8800"/>
+                            <path d="M 76 22 L 78 28 L 84 28 L 79 32 L 81 38 L 76 34 L 71 38 L 73 32 L 68 28 L 74 28 Z" fill="#ffb347"/>
+                        </svg>
+                        <div class="logo-text">
+                            <span class="logo-main" style="color: white;">CS NTIC School</span>
+                            <span class="logo-sub">Banfora</span>
+                        </div>
+                    </a>
+                    <p>Complexe Scolaire privé d'excellence à Banfora depuis 2011. Primaire (CEP), Secondaire (BEPC) et Lycée (BAC).</p>
+
+                    <div class="footer-legal">
+                        <strong>Mentions légales</strong><br>
+                        Établissement autorisé par le MENAPLN<br>
+                        Code : BF-BNF-2011-045<br>
+                        IFU : 00012345A — RCCM : BF-BNF-2011-B-045
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg class="icon"><use href="#icon-facebook"/></svg></a>
+                        <a href="https://wa.me/22669696924" aria-label="WhatsApp"><svg class="icon"><use href="#icon-message"/></svg></a>
+                        <a href="#" aria-label="YouTube"><svg class="icon"><use href="#icon-youtube"/></svg></a>
+                        <a href="#" aria-label="TikTok"><svg class="icon"><use href="#icon-music"/></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#ecole">Notre École</a></li>
+                        <li><a href="#programmes">Programmes</a></li>
+                        <li><a href="#actualites">Actualités</a></li>
+                        <li><a href="#equipe">Équipe</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Inscriptions</h4>
+                    <ul>
+                        <li><a href="#inscriptions">S'inscrire</a></li>
+                        <li><a href="#inscriptions">Documents</a></li>
+                        <li><a href="#inscriptions">Tarifs</a></li>
+                        <li><a href="#programmes">Programmes</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg class="icon"><use href="#icon-map-pin"/></svg>
+                        <span>Secteur 15, Quartier Tatana<br>Banfora, Burkina Faso</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="icon"><use href="#icon-phone"/></svg>
+                        <span>+226 05 58 58 68</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="icon"><use href="#icon-message"/></svg>
+                        <span>+226 69 69 69 24 (WhatsApp)</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="icon"><use href="#icon-mail"/></svg>
+                        <span>nticsolution.bf@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Complexe Scolaire NTIC School — Tous droits réservés.</p>
+                <p>Site réalisé par <a href="https://nticsolution.org" target="_blank">NTIC Solution</a> — Banfora</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/22669696924?text=Bonjour%20NTIC%20School%2C%20je%20souhaite%20des%20informations%20sur%20les%20inscriptions."
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="WhatsApp">
+        <svg class="icon"><use href="#icon-message"/></svg>
+    </a>
+
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <svg class="icon"><use href="#icon-chevron-down"/></svg>
+    </button>
+
+    <script>
+        /* ============================================
+           NTIC SCHOOL — SCRIPT V4.0 RÉALISTE
+           ============================================ */
+
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-tab');
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + target).classList.add('active');
+            });
+        });
+
+        function animateCounters() {
+            document.querySelectorAll('[data-count]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 1800;
+                const step = target / (duration / 16);
+                let current = 0;
+                const update = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + (target >= 100 ? '%' : '');
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target + (target >= 100 ? '%' : '');
+                    }
+                };
+                update();
+            });
+        }
+
+        let countersDone = false;
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                if (el.getBoundingClientRect().top < windowHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+
+            if (!countersDone) {
+                const stats = document.querySelector('.official-stats');
+                if (stats && stats.getBoundingClientRect().top < windowHeight - 100) {
+                    countersDone = true;
+                    animateCounters();
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        const form = document.getElementById('enrollmentForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                parent: document.getElementById('parentName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                student: document.getElementById('studentName').value,
+                level: document.getElementById('level').value,
+                gender: document.getElementById('gender').value
+            };
+
+            if (!data.parent || !data.phone || !data.student || !data.level || !data.gender) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.innerHTML;
+            btn.innerHTML = 'Envoi en cours...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const msg = `Bonjour CS NTIC School,%0A%0A` +
+                    `Nouvelle pré-inscription :%0A` +
+                    `Parent : ${encodeURIComponent(data.parent)}%0A` +
+                    `Téléphone : ${encodeURIComponent(data.phone)}%0A` +
+                    `Email : ${encodeURIComponent(data.email || 'Non renseigné')}%0A` +
+                    `Élève : ${encodeURIComponent(data.student)}%0A` +
+                    `Niveau : ${encodeURIComponent(data.level)}%0A` +
+                    `Sexe : ${encodeURIComponent(data.gender)}`;
+
+                window.open(`https://wa.me/22669696924?text=${msg}`, '_blank');
+                alert('Pré-inscription préparée.\n\nRedirection vers WhatsApp...');
+                form.reset();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            }, 800);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.pageYOffset - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        console.log('%cCS NTIC School — Banfora', 'font-size: 18px; font-weight: bold; color: #0066cc;');
+        console.log('%cDémo réalisée par NTIC Solution', 'font-size: 12px; color: #ff8800;');
+    </script>
+
+</body>
+</html>
